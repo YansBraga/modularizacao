@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+/* Autor - Yan
+ * Objetivo - Exercício 1
+ * Data - 05/10/22
+ */
+public class Ex001 
+{
+
+	public static void mandar(double n1, double n2, double n3)
+	{
+		Scanner teclado = new Scanner(System.in);
+		
+		char opcao;
+		double mediaa, mediap;
+		
+		System.out.println("Insira 'A' para média aritimética ou 'P' para ponderada: ");
+		opcao = teclado.next().charAt(0);
+		
+		if (opcao == 'a' || opcao == 'A')
+		{
+			mediaa = (n1 + n2 + n3) / 3;
+			
+			System.out.println("=================\nMédia Aritimética\n=================");
+			System.out.printf("O resultado da média é: %.1f\n", mediaa);
+			System.out.println("---------------------------");
+		}
+		
+		else if (opcao == 'p' || opcao == 'P')
+		{
+			mediap = (n1 + n2 + n3)/(5 + 3 + 2);
+			
+			System.out.println("=================\n Média Ponderada\n=================");
+			System.out.printf("O resultado da média é: %.1f\n", mediap);
+			System.out.println("---------------------------");
+		}
+		
+		else
+		{
+			System.out.println("ERRO!");
+		}
+		
+	}
+	
+	public static void main(String[] args) 
+	{
+		Scanner ler = new Scanner(System.in);
+		double n1, n2, n3;
+		int alunos;
+		
+		System.out.println("Insira a quantidade de alunos: ");
+		alunos = ler.nextInt();
+		
+		for (int cont = 1; cont <= alunos;cont++)
+		{
+			System.out.println("Insira as três notas: ");
+			n1 = ler.nextDouble();
+			n2 = ler.nextDouble();
+			n3 = ler.nextDouble();
+			
+			mandar(n1, n2, n3);
+		}
+		
+		System.out.println("Fim do Programa");
+		
+		ler.close();
+
+	}
+
+}
